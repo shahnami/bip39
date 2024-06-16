@@ -21,6 +21,9 @@ const generateAddressesFromSeed = async (seed: string, count: number) => {
   return accounts;
 };
 
-generateAddressesFromSeed(process.env.SEED_PHRASE ?? "", 3).then((accounts) => {
+generateAddressesFromSeed(
+  process.env.SEED_PHRASE ?? "",
+  parseInt(process.env.COUNT ?? "3")
+).then((accounts) => {
   console.log(accounts);
 });
